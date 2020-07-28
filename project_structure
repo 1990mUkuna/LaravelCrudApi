@@ -1,0 +1,56 @@
+
+Create Project
+: composer create-project --prefer-dist laravel/laravel APIBlog
+
+Tu run Xamp in Ubuntu
+: $ sudo /opt/lampp/manager-linux-x64.run
+
+
+To create Database and table in laravel We use "Migrations"
+
+What is Migrations: is a way to version control tables
+
+Commands to migrate table
+: php artisan make:migration create_products_table
+
+After updating the migrated table with the column
+-> php artisan migrate
+
+Note: To Rolback your migration or to edit
+->php artisan migrate:rollback
+go back to the table that you want want to edit, make your change
+->php artisan migrate
+
+Go to env. t setup your Database name where the table must me migrated 
+
+Run php artisan migrate
+
+******* Setting up Controller and Routes ***********************
+
+Model : Interact with the database Tables
+Controller: We define Application Logic
+
+
+To crate Controller:
+-> php artisan make:controller ProductController 
+-> php artisan make:controller ProductController --resource
+Note: Resource will add all the crud functions
+
+Note: In order to access the controller you need to routes 
+
+-> Go to routes
+-> api.php "Here is where you define all api routes"
+
+Note: Now to check that your Controller is connected with the routes, echo inside show method
+      Go to postman
+
+****Create Model **************
+
+Not: Model Naming Conventions.
+     Model         -       Table 
+     Product       -       products 
+     User          -       users
+
+Create Model
+-> php artisan make:model Product
+ 
