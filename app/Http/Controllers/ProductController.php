@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Product;
 class ProductController extends Controller
 {
     /**
@@ -38,6 +38,12 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // Save product
+        $product = new Product();
+        $product ->name = $request->name;
+        $product ->description = $request->description;
+        $product ->price = $request->price;
+        $product->save();
+
     }
 
     /**
