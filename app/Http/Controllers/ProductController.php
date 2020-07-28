@@ -16,7 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         // this Method is to fetch all product
-        echo 'All product';
+        $products = Product::all();
+        return $products;
     }
 
     /**
@@ -57,7 +58,9 @@ class ProductController extends Controller
     public function show($id)
     {
         // geting single product
-        echo 'Single Product';
+        $product = Product::find($id);
+        return $product;
+        
     }
 
     /**
