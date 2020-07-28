@@ -81,9 +81,17 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     //http://127.0.0.1:8001/api/products/1
     public function update(Request $request, $id)
     {
         // Update Single product
+        $product = Product::find($id);
+        $product ->name = $request->name;
+        $product ->description = $request->description;
+        $product ->price = $request->price;
+        $product ->save();
+
     }
 
     /**
@@ -95,5 +103,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         // To delete product
+        $product = Product::find($id);
+        $product->delete();
     }
 }
